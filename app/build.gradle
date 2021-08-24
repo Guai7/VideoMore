@@ -1,0 +1,135 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.bawei.minestudy"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation project(path: ':MyBase')
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation project(path: ':lib_slide')
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //工具类
+    implementation 'com.blankj:utilcode:1.30.6'
+
+    //网络框架 okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+
+    //日志拦截器
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.0'
+
+    //OkGo网络框架
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.lzy.net:okserver:2.0.5'
+
+    //Glide图片框架
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    //RecyclerView
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //万能适配器
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0'
+
+    //间隔线
+    implementation 'com.yanyusong.y_divideritemdecoration:y_divideritemdecoration:2.0'
+
+    //banner轮播图
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    //recycler item动画
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.0'
+
+    //刷新核心必须依赖
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+
+    //经典刷新头
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.3'
+
+    //毛玻璃效果实现
+    compile 'jp.wasabeef:blurry:3.0.0'
+
+    //导航栏框架
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+
+//    //dagger2依赖
+//    implementation 'com.google.dagger:dagger:2.23.2'
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
+
+    //butterKnife
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    //retrofit2
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //Gson converter gson解析
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //RxJava2 Adapter
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+
+    //RxJava依赖
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    //tablayout
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //EventBus依赖	（类似广播）
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    //视频控件StandardGSYVideoPlayer
+    implementation 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.3-jitpack'
+
+    //超级FrameLayout
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+
+    //支付宝
+    compile (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
+
+    //弹幕
+    implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    implementation 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
+    implementation 'com.github.ctiao:ndkbitmap-armv5:0.9.21'
+    implementation 'com.github.ctiao:ndkbitmap-x86:0.9.21'
+    implementation 'com.kd.easybarrage:library:0.0.1'
+
+}

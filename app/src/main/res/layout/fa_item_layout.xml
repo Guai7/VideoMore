@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="@dimen/dp_320">
+
+    <ImageView
+        android:id="@+id/fa_item_img"
+        android:src="@drawable/ic_launcher_background"
+        android:background="#EEE"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40">
+
+        <ImageView
+            android:src="@drawable/ic_launcher_background"
+            android:id="@+id/fa_item_head_img"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"/>
+
+        <TextView
+            android:text="用户名"
+            android:id="@+id/fa_item_username_text"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

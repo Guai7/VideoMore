@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- text color -->
+    <color name="text_color_3">#333333</color>
+    <color name="text_color_6">#666666</color>
+    <color name="text_color_8">#808080</color>
+    <color name="text_color_9">#999999</color>
+    <color name="text_color_c">#C1C1C1</color>
+
+    <color name="text_color_red">#c9191d</color>
+    <color name="text_color_blue">#00B2FF</color>
+    <color name="text_color_green">#52C243</color>
+    <color name="text_color_orange">#FA821D</color>
+
+
+
+    <!-- 分割线 -->
+    <color name="color_line_divider">#E5E5E5</color>
+</resources>

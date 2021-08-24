@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="list1" type="string">评论</item>
+    <item name="list2" type="string">评论</item>
+    <item name="list3" type="string">评论</item>
+    <item name="list4" type="string">评论</item>
+    <item name="list5" type="string">评论</item>
+    <item name="list6" type="string">评论</item>
+    <item name="list7" type="string">评论</item>
+    <item name="list8" type="string">评论</item>
+    <item name="list9" type="string">评论</item>
+    <item name="list10" type="string">评论</item>
+    <item name="list11" type="string">评论</item>
+    <item name="list12" type="string">评论</item>
+    <item name="list13" type="string">评论</item>
+</resources>
