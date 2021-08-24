@@ -7,7 +7,6 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.bw.paydemo"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
@@ -43,8 +42,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //支付宝
-    compile (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
+    implementation (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
 
     implementation ('com.alibaba:arouter-api:1.5.2') //ARouter依赖
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2' //ARouter依赖
+
+    //butterKnife
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 }

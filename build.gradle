@@ -20,13 +20,13 @@ plugins{
 }
 
 appConfig {
-    debugEnable true
+    debugEnable false
     apps {
         app{
             name ":app"
             applicationId "com.bawei.minestudy"
             applicationName ".App"
-            mainActivity ".MainActivity"
+            mainActivity ".activity.MainActivity"
             modules ":paydemo"
         }
     }
@@ -36,7 +36,7 @@ appConfig {
             name ":paydemo"
             applicationId "com.bw.paydemo"
             applicationName ".App"
-            mainActivity ".MainActivity"
+            mainActivity ".PayMainActivity"
             isRunAlone true
         }
 

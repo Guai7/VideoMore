@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.app.PayTask;
 import com.bw.paydemo.pay.PayResult;
@@ -22,9 +21,7 @@ import com.bw.paydemo.pay.util.OrderInfoUtil2_0;
 
 import java.util.Map;
 
-
-@Route(path = "/paydemo/main/test1")
-public class MainActivity extends AppCompatActivity {
+public class PayMainActivity extends AppCompatActivity {
 
     private Button payMainPayBtn;
     private RadioGroup payMainRadioGroup;
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_pay);
 
         EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
 
@@ -59,25 +56,18 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("NonConstantResourceId")
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.pay_main_radio_50_yuan:
-                        money = 50.0;
-                        break;
-                    case R.id.pay_main_radio_80_yuan:
-                        money = 80.0;
-                        break;
-                    case R.id.pay_main_radio_120_yuan:
-                        money = 120.0;
-                        break;
-                    case R.id.pay_main_radio_200_yuan:
-                        money = 200.0;
-                        break;
-                    case R.id.pay_main_radio_340_yuan:
-                        money = 340.0;
-                        break;
-                    case R.id.pay_main_radio_648_yuan:
-                        money = 648.0;
-                        break;
+                if (checkedId == R.id.pay_main_radio_50_yuan) {
+                    money = 50.0;
+                } else if (checkedId == R.id.pay_main_radio_80_yuan) {
+                    money = 80.0;
+                } else if (checkedId == R.id.pay_main_radio_120_yuan) {
+                    money = 120.0;
+                } else if (checkedId == R.id.pay_main_radio_200_yuan) {
+                    money = 200.0;
+                } else if (checkedId == R.id.pay_main_radio_340_yuan) {
+                    money = 340.0;
+                } else if (checkedId == R.id.pay_main_radio_648_yuan) {
+                    money = 648.0;
                 }
             }
         });
@@ -131,11 +121,11 @@ public class MainActivity extends AppCompatActivity {
                     // 判断resultStatus 为9000则代表支付成功
                     if (TextUtils.equals(resultStatus, "9000")) {
                         // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
-                        Toast.makeText(MainActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PayMainActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
 
                     } else {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
-                        Toast.makeText(MainActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PayMainActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
                     }
                     break;
                 }
@@ -147,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void payV2(Double money) {
         if (TextUtils.isEmpty(APPID) || (TextUtils.isEmpty(RSA2_PRIVATE) && TextUtils.isEmpty(RSA_PRIVATE))) {
-            Toast.makeText(MainActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PayMainActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -170,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                PayTask alipay = new PayTask(MainActivity.this);
+                PayTask alipay = new PayTask(PayMainActivity.this);
                 Map<String, String> result = alipay.payV2(orderInfo, true);
                 Log.i("msp", result.toString());
 

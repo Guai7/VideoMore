@@ -2,6 +2,7 @@ package com.bawei.minestudy.mvp.model;
 
 import com.bawei.minestudy.entity.LogAndRegEntity;
 import com.bawei.minestudy.mvp.Api;
+import com.bawei.minestudy.mvp.HttpLoginUtils;
 import com.bawei.minestudy.mvp.HttpUtils;
 import com.bawei.minestudy.mvp.contract.IContract;
 import com.bawei.mybase.model.BaseModel;
@@ -21,7 +22,7 @@ public class LogAndRegModel extends BaseModel implements IContract.ILoginModel, 
 
     @Override
     public void login(String username,String pwd,Observer<LogAndRegEntity> observer) {
-        HttpUtils.getInstance()
+        HttpLoginUtils.getInstance()
                 .getRetrofit(Api.BASE_URL_LOGIN)
                 .create(Api.class)
                 .requestLogin(username,pwd)
@@ -32,7 +33,7 @@ public class LogAndRegModel extends BaseModel implements IContract.ILoginModel, 
 
     @Override
     public void register(String username, String pwd, Observer<LogAndRegEntity> observer) {
-        HttpUtils.getInstance()
+        HttpLoginUtils.getInstance()
                 .getRetrofit(Api.BASE_URL_LOGIN)
                 .create(Api.class)
                 .requestRegister(username,pwd)

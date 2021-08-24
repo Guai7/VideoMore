@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1000dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/pay_main_radio_group"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="280dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/pay_main_radio_50_yuan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="50元"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/pay_main_radio_80_yuan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="80元"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/pay_main_radio_120_yuan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="120元"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/pay_main_radio_200_yuan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="200元"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/pay_main_radio_340_yuan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="340元"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/pay_main_radio_648_yuan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="648元"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/pay_main_pay_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值" />
+
+    </LinearLayout>
+
+</LinearLayout>
