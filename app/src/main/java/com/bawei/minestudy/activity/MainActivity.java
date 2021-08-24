@@ -21,6 +21,7 @@ import com.bawei.minestudy.utils.SpUtils;
 import com.bawei.minestudy.utils.WindowUtils;
 import com.bawei.mybase.view.BaseActivity;
 import com.blankj.utilcode.util.SizeUtils;
+import com.bw.animationdemo.AnimationMainActivity;
 import com.bw.paydemo.PayMainActivity;
 import com.frame.lib_common.slidingmenu.SlidingMenu;
 
@@ -154,7 +155,8 @@ public class MainActivity extends BaseActivity {
         this.menu.findViewById(R.id.slide_animation_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, AnimationMainActivity.class);
+                startActivity(intent);
             }
         });
 

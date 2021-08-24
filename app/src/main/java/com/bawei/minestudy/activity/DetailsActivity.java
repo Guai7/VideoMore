@@ -133,6 +133,4 @@ public class DetailsActivity extends BaseActivity {
         detailsRetBtn.getGSYVideoManager().stop();
         detailsRetBtn.release();
     }
-
-
 }

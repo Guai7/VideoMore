@@ -27,7 +27,7 @@ appConfig {
             applicationId "com.bawei.minestudy"
             applicationName ".App"
             mainActivity ".activity.MainActivity"
-            modules ":paydemo"
+            modules ":paydemo",":animationdemo"
         }
     }
 
@@ -37,6 +37,13 @@ appConfig {
             applicationId "com.bw.paydemo"
             applicationName ".App"
             mainActivity ".PayMainActivity"
+            isRunAlone true
+        }
+        animationdemo {
+            name ":animationdemo"
+            applicationId "com.bw.animationdemo"
+            applicationName ".App"
+            mainActivity ".AnimationMainActivity"
             isRunAlone true
         }
 

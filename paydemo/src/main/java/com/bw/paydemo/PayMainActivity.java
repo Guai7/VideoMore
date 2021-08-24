@@ -24,13 +24,6 @@ import java.util.Map;
 public class PayMainActivity extends AppCompatActivity {
 
     private Button payMainPayBtn;
-    private RadioGroup payMainRadioGroup;
-    private RadioButton payMainRadio50Yuan;
-    private RadioButton payMainRadio80Yuan;
-    private RadioButton payMainRadio120Yuan;
-    private RadioButton payMainRadio200Yuan;
-    private RadioButton payMainRadio340Yuan;
-    private RadioButton payMainRadio648Yuan;
 
     private Double money = 50.0;
 
@@ -49,26 +42,6 @@ public class PayMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 payV2(money);
-            }
-        });
-
-        payMainRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.pay_main_radio_50_yuan) {
-                    money = 50.0;
-                } else if (checkedId == R.id.pay_main_radio_80_yuan) {
-                    money = 80.0;
-                } else if (checkedId == R.id.pay_main_radio_120_yuan) {
-                    money = 120.0;
-                } else if (checkedId == R.id.pay_main_radio_200_yuan) {
-                    money = 200.0;
-                } else if (checkedId == R.id.pay_main_radio_340_yuan) {
-                    money = 340.0;
-                } else if (checkedId == R.id.pay_main_radio_648_yuan) {
-                    money = 648.0;
-                }
             }
         });
     }
@@ -178,12 +151,5 @@ public class PayMainActivity extends AppCompatActivity {
 
     private void initView() {
         payMainPayBtn = findViewById(R.id.pay_main_pay_btn);
-        payMainRadioGroup = findViewById(R.id.pay_main_radio_group);
-        payMainRadio50Yuan = findViewById(R.id.pay_main_radio_50_yuan);
-        payMainRadio80Yuan = findViewById(R.id.pay_main_radio_80_yuan);
-        payMainRadio120Yuan = findViewById(R.id.pay_main_radio_120_yuan);
-        payMainRadio200Yuan = findViewById(R.id.pay_main_radio_200_yuan);
-        payMainRadio340Yuan = findViewById(R.id.pay_main_radio_340_yuan);
-        payMainRadio648Yuan = findViewById(R.id.pay_main_radio_648_yuan);
     }
 }

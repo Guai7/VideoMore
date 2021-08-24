@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/MyBase" />
+            <option value="$PROJECT_DIR$/animationdemo" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/lib_slide" />
             <option value="$PROJECT_DIR$/paydemo" />
