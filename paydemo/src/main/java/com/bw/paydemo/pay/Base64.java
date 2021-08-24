@@ -1,4 +1,4 @@
-package com.bawei.minestudy.pay;
+package com.bw.paydemo.pay;
 
 public final class Base64 {
 

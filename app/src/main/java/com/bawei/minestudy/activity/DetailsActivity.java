@@ -101,6 +101,7 @@ public class DetailsActivity extends BaseActivity {
             }
         });
 
+        //
         detailsFlyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,8 +120,6 @@ public class DetailsActivity extends BaseActivity {
                 detailsFlyTextView.addDanmaku(danmaku); //添加弹幕
             }
         });
-
-
     }
 
     @Override

@@ -2,3 +2,4 @@ rootProject.name = "MineStudy"
 include ':app'
 include ':MyBase'
 include ':lib_slide'
+include ':paydemo'

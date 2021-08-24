@@ -1,9 +1,9 @@
-package com.bawei.minestudy.pay;
+package com.bw.paydemo.pay;
 
 import com.alipay.sdk.app.PayTask;
 import com.alipay.sdk.util.H5PayResultModel;
 import com.alipay.sdk.app.H5PayCallback;
-import com.bawei.minestudy.R;
+import com.bw.paydemo.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
