@@ -17,19 +17,27 @@ public class SpUtils {
     private static SpUtils utils;
     private SharedPreferences sp;
 
+
+
     private SpUtils() {
         sp = App.context.getSharedPreferences("login", Context.MODE_PRIVATE);
     }
 
-    public synchronized static SpUtils getInstance() {
-        if (utils==null){
-            synchronized (SpUtils.class){
-                if (utils==null){
-                    utils = new SpUtils();
-                }
-            }
+    static enum SingletonEnum{
+        INSTANCE;
+        private SpUtils utils;
+
+        private SingletonEnum() {
+            utils = new SpUtils();
         }
-        return utils;
+
+        public SpUtils getInstance(){
+            return utils;
+        }
+    }
+
+    public static SpUtils getInstance(){
+        return SingletonEnum.INSTANCE.getInstance();
     }
 
     public SharedPreferences getLogin() {

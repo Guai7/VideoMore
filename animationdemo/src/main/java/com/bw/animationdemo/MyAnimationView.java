@@ -84,7 +84,7 @@ public class MyAnimationView extends RelativeLayout {
         MyEvaluator myEvaluator = new MyEvaluator(getPointF(),getPointF());
 
         //设置起始终止位置
-        PointF randomEndPoint = new PointF((float) (Math.random()*width),(float)(Math.random()*50));
+        PointF randomEndPoint = new PointF((float) (Math.random()*1000),(float)(Math.random())*500);
         PointF randomStartPoint = new PointF((float)(width/2),(float)height);
 
         //设置动画
