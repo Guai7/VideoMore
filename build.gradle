@@ -15,47 +15,6 @@ buildscript {
     }
 }
 
-plugins{
-    id "calces.appconfig" version "3.3.0-alpha01"
-}
-
-appConfig {
-    debugEnable false
-    apps {
-        app{
-            name ":app"
-            applicationId "com.bawei.minestudy"
-            applicationName ".App"
-            mainActivity ".activity.MainActivity"
-            modules ":paydemo",":animationdemo"
-        }
-    }
-
-    modules {
-        paydemo {
-            name ":paydemo"
-            applicationId "com.bw.paydemo"
-            applicationName ".App"
-            mainActivity ".PayMainActivity"
-            isRunAlone true
-        }
-        animationdemo {
-            name ":animationdemo"
-            applicationId "com.bw.animationdemo"
-            applicationName ".App"
-            mainActivity ".AnimationMainActivity"
-            isRunAlone true
-        }
-
-//        module2 {
-//            name ":***"
-//            applicationId "com.***"
-//            applicationName ".***"
-//            mainActivity ".MainActivity"
-//            isRunAlone false
-//        }
-    }
-}
 
 allprojects {
     repositories {

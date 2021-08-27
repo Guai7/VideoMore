@@ -85,7 +85,7 @@
                 android:layout_height="64dp">
                 <TextView
                     android:id="@+id/slide_animation_btn"
-                    android:text="动画练习"
+                    android:text="直播间"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>

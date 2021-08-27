@@ -34,6 +34,7 @@ public class DetailsActivity extends BaseActivity {
     private DanmakuView detailsFlyTextView;
     private DanmakuContext danmakuContext;
 
+
     @Override
     public void initView() {
         detailsRetBtn = findViewById(R.id.details_ret_btn);
@@ -101,7 +102,7 @@ public class DetailsActivity extends BaseActivity {
             }
         });
 
-        //
+        //发送弹幕按钮
         detailsFlyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

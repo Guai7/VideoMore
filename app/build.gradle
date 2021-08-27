@@ -1,5 +1,5 @@
 plugins{
-    id 'calces.modules'
+    id 'com.android.application'
 }
 
 android {
@@ -8,6 +8,7 @@ android {
 
     defaultConfig {
         minSdkVersion 24
+        applicationId "com.bawei.minestudy"
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -137,4 +138,6 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2' //ARouter依赖
 //支付宝
     implementation (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
+
+
 }
