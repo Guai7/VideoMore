@@ -12,9 +12,12 @@ import androidx.fragment.app.Fragment;
 
 import com.bawei.mybase.presenter.IPresenter;
 
+import javax.inject.Inject;
+
 public abstract
 class BaseFragment<P extends IPresenter> extends Fragment implements IFragment,IView {
     private View view;
+    @Inject
     protected P presenter;
 
     @Override

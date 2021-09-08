@@ -28,7 +28,8 @@ public class RecyclerAdapter extends BaseMultiItemQuickAdapter<GiftEntity.DataBe
     protected void convert(@NotNull BaseViewHolder baseViewHolder, GiftEntity.DataBean dataBean) {
         
         baseViewHolder.setText(R.id.item_gift_text,dataBean.getName());
+        baseViewHolder.setText(R.id.item_gift_money_text,""+dataBean.getPrice());
 
-        Glide.with(App.context).load(dataBean.getPreviewImg()).into((ImageView) baseViewHolder.getView(R.id.item_gift_img));
+        Glide.with(getContext()).load(dataBean.getPreviewImg()).into((ImageView) baseViewHolder.getView(R.id.item_gift_img));
     }
 }

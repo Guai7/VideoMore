@@ -354,7 +354,7 @@ public class MyVideo extends GSYVideoPlayer {
     public GSYBaseVideoPlayer startWindowFullscreen(Context context, boolean actionBar, boolean statusBar) {
         GSYBaseVideoPlayer gsyBaseVideoPlayer = super.startWindowFullscreen(context, actionBar, statusBar);
         if (gsyBaseVideoPlayer != null) {
-            com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer gsyVideoPlayer = (com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer) gsyBaseVideoPlayer;
+            MyVideo gsyVideoPlayer = (MyVideo) gsyBaseVideoPlayer;
             gsyVideoPlayer.setLockClickListener(mLockClickListener);
             gsyVideoPlayer.setNeedLockFull(isNeedLockFull());
             initFullUI(gsyVideoPlayer);
@@ -758,7 +758,7 @@ public class MyVideo extends GSYVideoPlayer {
     /**
      * 全屏的UI逻辑
      */
-    private void initFullUI(com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer standardGSYVideoPlayer) {
+    private void initFullUI(MyVideo standardGSYVideoPlayer) {
 
         if (mBottomProgressDrawable != null) {
             standardGSYVideoPlayer.setBottomProgressBarDrawable(mBottomProgressDrawable);

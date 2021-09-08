@@ -8,8 +8,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,15 +18,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.app.PayTask;
 import com.bw.paydemo.pay.PayResult;
+import com.bw.paydemo.pay.db.DaoSession;
+import com.bw.paydemo.pay.db.UserMoneyDao;
+import com.bw.paydemo.pay.entity.UserMoney;
+import com.bw.paydemo.pay.util.MoneyManager;
 import com.bw.paydemo.pay.util.OrderInfoUtil2_0;
+import com.youth.banner.Banner;
 
+import java.util.List;
 import java.util.Map;
 
-public class PayMainActivity extends AppCompatActivity {
+public class PayMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button payMainPayBtn;
 
     private Double money = 50.0;
+    private TextView payMainMoneyText;
+    private LinearLayout payMainRadioGroup;
+    private CheckBox payMainRadio50Yuan;
+    private CheckBox payMainRadio80Yuan;
+    private CheckBox payMainRadio120Yuan;
+    private CheckBox payMainRadio200Yuan;
+    private CheckBox payMainRadio340Yuan;
+    private CheckBox payMainRadio648Yuan;
+
+    private DaoSession daoSession;
+    private int nowMoneyPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +56,42 @@ public class PayMainActivity extends AppCompatActivity {
         initView();
 
 
-        payMainPayBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                payV2(money);
-            }
-        });
+        payMainPayBtn.setOnClickListener(this);
+
+        payMainRadio50Yuan.setOnClickListener(this);
+        payMainRadio80Yuan.setOnClickListener(this);
+        payMainRadio120Yuan.setOnClickListener(this);
+        payMainRadio200Yuan.setOnClickListener(this);
+        payMainRadio340Yuan.setOnClickListener(this);
+        payMainRadio648Yuan.setOnClickListener(this);
+
+        daoSession = MoneyManager.getInstance(PayMainActivity.this).getDaoSession();
+
+        refreshMoney();
+
+    }
+
+    private void refreshMoney() {
+
+        //查询所有
+        List<UserMoney> userMonies = daoSession.loadAll(UserMoney.class);
+        //获取最新的id 数据
+        nowMoneyPosition = userMonies.size();
+
+        //判断是否第一次打开
+        if (nowMoneyPosition == -1){
+            payMainMoneyText.setText(""+0.0);
+        }else {
+            //获取最新数据
+            UserMoney userNow = daoSession.queryBuilder(UserMoney.class).where(UserMoneyDao.Properties.Id.eq(nowMoneyPosition)).build().unique();
+
+            //获取Money
+            Double money = userNow.getMoney();
+
+
+            payMainMoneyText.setText(""+money);
+        }
+
     }
 
 
@@ -96,6 +144,15 @@ public class PayMainActivity extends AppCompatActivity {
                         // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
                         Toast.makeText(PayMainActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
 
+                        UserMoney money1 = daoSession.queryBuilder(UserMoney.class).where(UserMoneyDao.Properties.Id.eq(nowMoneyPosition)).unique();
+
+                        UserMoney userMoney = new UserMoney();
+                        userMoney.setMoney(PayMainActivity.this.money +money1.getMoney());
+                        daoSession.insert(userMoney);
+
+
+
+
                     } else {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
                         Toast.makeText(PayMainActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
@@ -104,8 +161,6 @@ public class PayMainActivity extends AppCompatActivity {
                 }
             }
         }
-
-        ;
     };
 
     public void payV2(Double money) {
@@ -122,7 +177,7 @@ public class PayMainActivity extends AppCompatActivity {
          * orderInfo 的获取必须来自服务端；
          */
         boolean rsa2 = (RSA2_PRIVATE.length() > 0);
-        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APPID, rsa2,money);
+        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APPID, rsa2, money);
         String orderParam = OrderInfoUtil2_0.buildOrderParam(params);
 
         String privateKey = rsa2 ? RSA2_PRIVATE : RSA_PRIVATE;
@@ -151,5 +206,101 @@ public class PayMainActivity extends AppCompatActivity {
 
     private void initView() {
         payMainPayBtn = findViewById(R.id.pay_main_pay_btn);
+        payMainMoneyText = findViewById(R.id.pay_main_money_text);
+        payMainRadioGroup = findViewById(R.id.pay_main_radio_group);
+        payMainRadio50Yuan = findViewById(R.id.pay_main_radio_50_yuan);
+        payMainRadio80Yuan = findViewById(R.id.pay_main_radio_80_yuan);
+        payMainRadio120Yuan = findViewById(R.id.pay_main_radio_120_yuan);
+        payMainRadio200Yuan = findViewById(R.id.pay_main_radio_200_yuan);
+        payMainRadio340Yuan = findViewById(R.id.pay_main_radio_340_yuan);
+        payMainRadio648Yuan = findViewById(R.id.pay_main_radio_648_yuan);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.pay_main_radio_50_yuan) {
+            payMainRadio50Yuan.setChecked(true);
+
+            payMainRadio120Yuan.setChecked(false);
+            payMainRadio200Yuan.setChecked(false);
+            payMainRadio340Yuan.setChecked(false);
+            payMainRadio648Yuan.setChecked(false);
+            payMainRadio80Yuan.setChecked(false);
+
+            money = 50.0;
+
+        }else if (id == R.id.pay_main_radio_80_yuan){
+
+            payMainRadio50Yuan.setChecked(false);
+            payMainRadio120Yuan.setChecked(false);
+            payMainRadio200Yuan.setChecked(false);
+            payMainRadio340Yuan.setChecked(false);
+            payMainRadio648Yuan.setChecked(false);
+            payMainRadio80Yuan.setChecked(true);
+
+            money = 80.0;
+
+        }else if (id == R.id.pay_main_radio_120_yuan){
+
+            payMainRadio50Yuan.setChecked(false);
+            payMainRadio120Yuan.setChecked(true);
+            payMainRadio200Yuan.setChecked(false);
+            payMainRadio340Yuan.setChecked(false);
+            payMainRadio648Yuan.setChecked(false);
+            payMainRadio80Yuan.setChecked(false);
+
+            money = 120.0;
+
+        }else if (id == R.id.pay_main_radio_200_yuan){
+
+            payMainRadio50Yuan.setChecked(false);
+            payMainRadio120Yuan.setChecked(false);
+            payMainRadio200Yuan.setChecked(true);
+            payMainRadio340Yuan.setChecked(false);
+            payMainRadio648Yuan.setChecked(false);
+            payMainRadio80Yuan.setChecked(false);
+
+            money = 200.0;
+
+        }else if (id == R.id.pay_main_radio_340_yuan){
+
+            payMainRadio50Yuan.setChecked(false);
+            payMainRadio120Yuan.setChecked(false);
+            payMainRadio200Yuan.setChecked(false);
+            payMainRadio340Yuan.setChecked(true);
+            payMainRadio648Yuan.setChecked(false);
+            payMainRadio80Yuan.setChecked(false);
+
+            money = 340.0;
+
+        }else if (id == R.id.pay_main_radio_648_yuan){
+
+            payMainRadio50Yuan.setChecked(false);
+            payMainRadio120Yuan.setChecked(false);
+            payMainRadio200Yuan.setChecked(false);
+            payMainRadio340Yuan.setChecked(false);
+            payMainRadio648Yuan.setChecked(true);
+            payMainRadio80Yuan.setChecked(false);
+
+            money = 648.0;
+
+        }else if (id == R.id.pay_main_pay_btn){
+
+            if (payMainRadio50Yuan.isChecked()||payMainRadio80Yuan.isChecked()||payMainRadio120Yuan.isChecked()||payMainRadio200Yuan.isChecked() ||payMainRadio340Yuan.isChecked()||payMainRadio648Yuan.isChecked()) {
+                payV2(money);
+            }
+            else {
+                Toast.makeText(this, "请选择金额", Toast.LENGTH_SHORT).show();
+            }
+
+
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshMoney();
     }
 }

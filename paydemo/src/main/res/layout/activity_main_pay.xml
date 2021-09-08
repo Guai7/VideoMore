@@ -6,13 +6,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="9">
+
+        <TextView
+            android:id="@+id/pay_main_money_text"
+            android:gravity="center"
+            android:text="余额"
+            android:textSize="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="￥"
+            android:textSize="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1000dp"
+        android:layout_height="0dp"
+        android:layout_weight="9"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -27,7 +45,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/pay_main_radio_50_yuan"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -41,7 +59,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/pay_main_radio_80_yuan"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -54,7 +72,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/pay_main_radio_120_yuan"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -74,7 +92,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/pay_main_radio_200_yuan"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -87,7 +105,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/pay_main_radio_340_yuan"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -100,7 +118,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/pay_main_radio_648_yuan"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -121,6 +139,8 @@
             android:id="@+id/pay_main_pay_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="#00B507"
             android:text="充值" />
 
     </LinearLayout>

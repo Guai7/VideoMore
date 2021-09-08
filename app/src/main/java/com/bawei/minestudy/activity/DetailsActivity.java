@@ -52,7 +52,7 @@ public class DetailsActivity extends BaseActivity {
         VideoEntity.DataBean video = (VideoEntity.DataBean) intent.getSerializableExtra("video");
         detailsRetBtn.setUp(video.getVideopath(),true,video.getAuthname());
         detailsRetBtn.startPlayLogic();
-        detailsRetBtn.setShowFullAnimation(true);
+//        detailsRetBtn.setShowFullAnimation(true);
 
         //视频视图获取返回按钮 并设置监听
         detailsRetBtn.getBackButton().setOnClickListener(new View.OnClickListener() {

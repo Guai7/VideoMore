@@ -21,6 +21,8 @@ import com.bawei.minestudy.utils.SpUtils;
 import com.bawei.minestudy.utils.WindowUtils;
 import com.bawei.mybase.view.BaseActivity;
 import com.blankj.utilcode.util.SizeUtils;
+//import com.bw.animationdemo.AnimationMainActivity;
+//import com.bw.paydemo.PayMainActivity;
 import com.bw.animationdemo.AnimationMainActivity;
 import com.bw.paydemo.PayMainActivity;
 import com.frame.lib_common.slidingmenu.SlidingMenu;
@@ -41,6 +43,11 @@ import butterknife.BindView;
  * author: 王益德
  * Describe:
  */
+
+/**
+ * TODO: 有注释的东西 记得取消掉
+ *
+ */
 public class MainActivity extends BaseActivity {
 
     private androidx.viewpager.widget.ViewPager mainVp;
@@ -58,9 +65,9 @@ public class MainActivity extends BaseActivity {
 
         mainVp = findViewById(R.id.main_vp);
         mainBottom = findViewById(R.id.main_bottom);
-        if (SpUtils.getInstance().getLogin().getBoolean("login",false)){
+//        if (SpUtils.getInstance().getLogin().getBoolean("login",false)){
             initMenu();
-        }
+//        }
     }
 
     @Override
@@ -71,6 +78,7 @@ public class MainActivity extends BaseActivity {
         fragments.add(new IndexFragment());
         fragments.add(new CityFragment());
         fragments.add(new MsgFragment());
+        fragments.add(new MineFragment());
         fragments.add(new MineFragment());
         FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(),fragments);
 
@@ -131,7 +139,8 @@ public class MainActivity extends BaseActivity {
     //Fragment点击menu而接受的广播
     @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
     public void open(String menu){
-        if (menu.equals("menu")&& SpUtils.getInstance().getLogin().getBoolean("login",false)){
+
+        if (menu.equals("menu")){
             this.menu.toggle();
         }
     }

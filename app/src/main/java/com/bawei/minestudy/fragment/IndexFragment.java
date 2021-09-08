@@ -48,15 +48,15 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
 
 
         //获取Sp对象 获取登录布尔值 判断是否已登录 登录就显示Menu否则显示登录text
-        SharedPreferences login = SpUtils.getInstance().getLogin();
-        boolean login1 = login.getBoolean("login", false);
-        if (login1) {
+//        SharedPreferences login = SpUtils.getInstance().getLogin();
+//        boolean login1 = login.getBoolean("login", false);
+//        if (login1) {
             loginBtn.setVisibility(View.GONE);
             menuBtn.setVisibility(View.VISIBLE);
-        } else {
-            loginBtn.setVisibility(View.VISIBLE);
-            menuBtn.setVisibility(View.GONE);
-        }
+//        } else {
+//            loginBtn.setVisibility(View.VISIBLE);
+//            menuBtn.setVisibility(View.GONE);
+//        }
 
 
     }

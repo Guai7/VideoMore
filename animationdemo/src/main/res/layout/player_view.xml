@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:background="@android:color/black">
 
+    <ImageView
+        android:id="@+id/gift_view"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
     <RelativeLayout
         android:id="@+id/surface_container"
         android:layout_width="match_parent"
@@ -11,13 +17,6 @@
         android:gravity="center">
 
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/gift_show_img"
-        android:visibility="invisible"
-        android:layout_centerInParent="true"
-        android:layout_width="250dp"
-        android:layout_height="250dp"/>
 
     <RelativeLayout
         android:id="@+id/thumb"
@@ -178,7 +177,6 @@
         android:visibility="invisible" />
 
     <moe.codeest.enviews.ENPlayView
-        android:visibility="gone"
         android:id="@+id/start"
         android:layout_width="60dp"
         android:layout_height="60dp"

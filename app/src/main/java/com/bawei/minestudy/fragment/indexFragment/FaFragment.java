@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.bawei.minestudy.R;
 import com.bawei.minestudy.activity.DetailsActivity;
 import com.bawei.minestudy.adapter.VideoAdapter;
+import com.bawei.minestudy.dagger.DaggerVideoComponent;
+import com.bawei.minestudy.dagger.VideoImageModule;
 import com.bawei.minestudy.entity.VideoEntity;
 import com.bawei.minestudy.mvp.contract.IContract;
 import com.bawei.minestudy.mvp.model.VideoModel;
@@ -45,7 +47,8 @@ public class FaFragment extends BaseFragment<VideoPresenter> implements IContrac
 
     @Override
     public void initView() {
-        presenter = new VideoPresenter(this, new VideoModel());
+        DaggerVideoComponent.builder().videoImageModule(new VideoImageModule(this)).build().inject(this);
+
         faRv = (RecyclerView) findViewById(R.id.fa_rv);
         faRv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         faRefresh = findViewById(R.id.fa_refresh);

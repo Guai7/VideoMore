@@ -8,9 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bawei.mybase.presenter.IPresenter;
 
+import javax.inject.Inject;
+
 public abstract
 class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView {
 
+    @Inject
     protected P presenter;
 
     @Override

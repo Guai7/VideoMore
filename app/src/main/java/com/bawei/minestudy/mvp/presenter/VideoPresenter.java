@@ -6,6 +6,8 @@ import com.bawei.mybase.presenter.BasePresenter;
 
 import org.jetbrains.annotations.NotNull;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -20,6 +22,7 @@ public class VideoPresenter extends BasePresenter<IContract.IVideoView, IContrac
 
     private Disposable disposable;
 
+    @Inject
     public VideoPresenter(IContract.IVideoView view, IContract.IVideoModel model) {
         super(view, model);
     }

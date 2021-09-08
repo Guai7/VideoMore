@@ -1,6 +1,7 @@
 plugins{
-    id 'com.android.application'
+    id 'com.android.library'
 }
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 android {
     compileSdkVersion 30
@@ -8,7 +9,7 @@ android {
 
     defaultConfig {
         minSdkVersion 24
-        applicationId "com.bw.paydemo"
+//        applicationId "com.bw.paydemo"
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -31,6 +32,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    greendao{
+        schemaVersion 1 //表示数据库版本号
+        daoPackage 'com.bw.paydemo.pay.db'//自动生成代码所在包名，默认在build/generated/source/greendao
+        targetGenDir 'src/main/java'  //生成的DAOMaster和DaoSession的位置
+    }
 }
 
 dependencies {
@@ -51,4 +58,12 @@ dependencies {
     //butterKnife
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    implementation 'org.greenrobot:greendao:3.3.0'
+
+    //工具类
+    implementation 'com.blankj:utilcode:1.30.6'
+
+    //banner轮播图
+    implementation 'com.youth.banner:banner:1.4.10'
 }

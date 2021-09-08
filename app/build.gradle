@@ -14,6 +14,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [qqappid: "1110635796"]
+
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -46,9 +49,28 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation project(path: ':lib_slide')
+    implementation project(path: ':animationdemo')
+    implementation project(path: ':paydemo')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation fileTree(include:['*.jar'], dir:'libs')
+
+    implementation  'com.umeng.umsdk:share-core:7.1.6'//分享核心库，必选
+    implementation  'com.umeng.umsdk:share-board:7.1.6'//分享面板功能，可选
+
+    implementation 'com.umeng.umsdk:share-qq:7.1.6'//QQ完整版
+    implementation 'com.tencent.tauth:qqopensdk:3.53.0'//QQ官方依赖库，必选
+    implementation 'com.squareup.okhttp3:okhttp:3.12.12'//QQ SDK在3.53.0版本及以上时需要集成okhttp官方依赖库，必选
+
+    compile  'com.umeng.umsdk:common:9.4.2'//必选
+    compile  'com.umeng.umsdk:asms:1.4.1'//必选
+    compile 'com.umeng.umsdk:link:1.1.0'//集成U-Link，可选，如要统计分享回流次数和分享新增用户指标则必选
+
+    // 友盟统计SDK
+    implementation  'com.umeng.umsdk:common:9.4.2'// 必选
+    implementation  'com.umeng.umsdk:asms:1.4.1'// 必选
 
     //工具类
     implementation 'com.blankj:utilcode:1.30.6'
@@ -97,10 +119,6 @@ dependencies {
     //导航栏框架
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
 
-//    //dagger2依赖
-//    implementation 'com.google.dagger:dagger:2.23.2'
-//    annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
-
     //butterKnife
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
@@ -138,6 +156,10 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2' //ARouter依赖
 //支付宝
     implementation (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
+
+    //dagger2依赖
+    implementation 'com.google.dagger:dagger:2.23.2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
 
 
 }

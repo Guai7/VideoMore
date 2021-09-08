@@ -2,7 +2,10 @@ package com.bw.animationdemo;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.util.AttributeSet;
@@ -14,6 +17,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +27,11 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.request.target.ViewTarget;
+import com.bw.animationdemo.db.DaoSession;
+import com.bw.animationdemo.db.UserMoneyDao;
+import com.bw.animationdemo.entity.UserMoney;
+import com.bw.animationdemo.utils.MoneyManager;
+import com.bw.paydemo.PayMainActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.gson.Gson;
@@ -30,7 +40,9 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
+import com.umeng.socialize.ShareAction;
 
+import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -51,10 +63,13 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
     private ImageView playerChat;
     private ImageView playerShare;
     private ImageView playerGift;
-    private View inflate1 = LayoutInflater.from(App.context).inflate(R.layout.gift_popuwindow,null);
+    private View inflate1 = LayoutInflater.from(getContext()).inflate(R.layout.gift_popuwindow,null);
     private PopupWindow window;
     private List<GiftEntity.DataBean> nowGiftList;
     private RecyclerAdapter recyclerAdapter;
+    private DaoSession daoSession;
+    private UserMoney money;
+    private View inflate;
 
     public MyVideoPlayer(Context context) {
         super(context);
@@ -72,11 +87,15 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
     public boolean onTouch(View v, MotionEvent event) {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (window!=null){
+                window.dismiss();
+            }
+
             if (time == 0L) {
                 time = System.currentTimeMillis();
             } else {
                 if (System.currentTimeMillis() - time < 400) {
-                    ImageView imageView = new ImageView(App.context);
+                    ImageView imageView = new ImageView(getContext());
 
                     imageView.setImageDrawable(getResources().getDrawable(R.mipmap.xin2));
                     imageView.setLayoutParams(new ViewGroup.LayoutParams(100, 100));
@@ -117,6 +136,10 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
 
     }
 
+    @Override
+    protected void touchDoubleUp(MotionEvent e) {
+
+    }
 
     @Override
     public int getLayoutId() {
@@ -141,10 +164,12 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
         //打开评论
         } else if (id == R.id.player_chat) {
 
-
         //打开分享
         } else if (id == R.id.player_share) {
 
+
+//            6130849204a0b741437c586f
+            EventBus.getDefault().postSticky("share");
 
         //点击礼物按钮时
         } else if (id == R.id.player_gift) {
@@ -165,6 +190,20 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
 
                 }
             });
+
+            if (money==null) {
+                daoSession = MoneyManager.getInstance(getContext()).getDaoSession();
+                List<UserMoney> userMonies = daoSession.loadAll(UserMoney.class);
+                int position = userMonies.size();
+
+                money = daoSession.queryBuilder(UserMoney.class).where(UserMoneyDao.Properties.Id.eq(position)).build().unique();
+
+                TextView moneyText = inflate.findViewById(R.id.this_money);
+                moneyText.setText(""+money.getMoney());
+
+            }
+
+
         }
     }
 
@@ -212,15 +251,12 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
         window.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
         window.setHeight(500);
 
-        window.setAnimationStyle(Animation.ZORDER_BOTTOM);
-
         window.setOutsideTouchable(true);
+        window.setTouchable(true);
 
-        View inflate = LayoutInflater.from(App.context).inflate(R.layout.gift_popuwindow, null);
+        inflate = LayoutInflater.from(getContext()).inflate(R.layout.gift_popuwindow, null);
         window.setContentView(inflate);
     }
-
-    private static View thatView = LayoutInflater.from(App.context).inflate(R.layout.player_view,null);
 
     /**
      * 适配器点击事件
@@ -230,38 +266,39 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
      */
     @Override
     public void onItemClick(@NonNull @NotNull BaseQuickAdapter<?, ?> adapter, @NonNull @NotNull View view, int position) {
-        ImageView showView = thatView.findViewById(R.id.gift_show_img);
-        showView.setVisibility(VISIBLE);
-        RequestBuilder<Drawable> load = Glide.with(App.context).load(nowGiftList.get(position).getGifImg());
-        hand(load,showView);
 
-        /**
-         * 延迟关闭
-         */
+
+
+        ImageView imgView = findViewById(R.id.gift_view);
+        imgView.setVisibility(VISIBLE);
+
+        String gifImg = nowGiftList.get(position).getGifImg();
+        Glide.with(getContext()).load(gifImg).into(imgView);
+        
+        if (money.getMoney()<nowGiftList.get(position).getPrice()){
+            AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+            dialog.setTitle("余额不足是否充值？");
+            dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+        }
+
+        //更新数据库数据
+        money.setMoney(money.getMoney()-nowGiftList.get(position).getPrice());
+        daoSession.update(money);
+
+        //更新视图数据
+        TextView moneyText = inflate.findViewById(R.id.this_money);
+        moneyText.setText(""+money.getMoney());
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                showView.setVisibility(INVISIBLE);
+                imgView.setVisibility(INVISIBLE);
             }
         },3000);
-    }
-
-    /**
-     * 确保加载到屏幕
-     * @param load
-     * @param showView
-     */
-    private void hand(RequestBuilder<Drawable> load, ImageView showView) {
-
-        if (load!=null){
-            load.into(showView);
-        }else {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    hand(load,showView);
-                }
-            },1000);
-        }
     }
 }

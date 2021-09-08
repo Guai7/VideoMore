@@ -1,6 +1,7 @@
 plugins{
-    id 'com.android.application'
+    id 'com.android.library'
 }
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 android {
     compileSdkVersion 30
@@ -8,12 +9,12 @@ android {
 
     defaultConfig {
         minSdkVersion 24
-        applicationId "com.bw.animationdemo"
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [qqappid: "1110635796"]
     }
 
     buildTypes {
@@ -26,6 +27,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    greendao{
+        schemaVersion 1 //表示数据库版本号
+        daoPackage 'com.bw.animationdemo.db'//自动生成代码所在包名，默认在build/generated/source/greendao
+        targetGenDir 'src/main/java'  //生成的DAOMaster和DaoSession的位置
+    }
 }
 
 dependencies {
@@ -33,9 +40,27 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation project(path: ':paydemo')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation fileTree(include:['*.jar'], dir:'libs')
+
+    implementation  'com.umeng.umsdk:share-core:7.1.6'//分享核心库，必选
+    implementation  'com.umeng.umsdk:share-board:7.1.6'//分享面板功能，可选
+
+    implementation 'com.umeng.umsdk:share-qq:7.1.6'//QQ完整版
+    implementation 'com.tencent.tauth:qqopensdk:3.53.0'//QQ官方依赖库，必选
+    implementation 'com.squareup.okhttp3:okhttp:3.12.12'//QQ SDK在3.53.0版本及以上时需要集成okhttp官方依赖库，必选
+
+    compile  'com.umeng.umsdk:common:9.4.2'//必选
+    compile  'com.umeng.umsdk:asms:1.4.1'//必选
+    compile 'com.umeng.umsdk:link:1.1.0'//集成U-Link，可选，如要统计分享回流次数和分享新增用户指标则必选
+
+    // 友盟统计SDK
+    implementation  'com.umeng.umsdk:common:9.4.2'// 必选
+    implementation  'com.umeng.umsdk:asms:1.4.1'// 必选
 
     //Gson
     implementation 'com.google.code.gson:gson:2.8.0'
@@ -53,4 +78,9 @@ dependencies {
 
     //视频控件StandardGSYVideoPlayer
     implementation 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer:v8.1.3-jitpack'
+
+    //EventBus依赖	（类似广播）
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    implementation 'org.greenrobot:greendao:3.3.0'
 }
