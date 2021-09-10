@@ -21,7 +21,7 @@ import java.util.List;
  * author: 王益德
  * Describe:
  */
-public class VideoJingAdapter extends BaseMultiItemQuickAdapter<VideoEntity.DataBean, BaseViewHolder> {
+public class VideoJingAdapter extends BaseMultiItemQuickAdapter<VideoEntity.DataBean, BaseViewHolder>{
 
     private int i = 0;
 

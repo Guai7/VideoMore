@@ -1,4 +1,4 @@
-package com.bw.animationdemo;
+package com.bw.animationdemo.myview;
 
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import androidx.core.content.ContextCompat;
+
+import com.bw.animationdemo.R;
 
 import java.util.Random;
 
@@ -49,7 +51,7 @@ public class MyAnimationView extends RelativeLayout {
      * 初始化
      */
     private void init() {
-        drawables[0] = ContextCompat.getDrawable(getContext(),R.mipmap.ic_launcher);
+        drawables[0] = ContextCompat.getDrawable(getContext(), R.mipmap.ic_launcher);
         drawables[1] = ContextCompat.getDrawable(getContext(),R.mipmap.ic_launcher);
         drawables[2] = ContextCompat.getDrawable(getContext(),R.mipmap.ic_launcher);
         drawables[3] = ContextCompat.getDrawable(getContext(),R.mipmap.ic_launcher);

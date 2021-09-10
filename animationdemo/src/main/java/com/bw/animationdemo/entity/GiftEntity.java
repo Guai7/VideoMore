@@ -1,4 +1,4 @@
-package com.bw.animationdemo;
+package com.bw.animationdemo.entity;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 

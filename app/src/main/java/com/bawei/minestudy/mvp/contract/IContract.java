@@ -16,7 +16,7 @@ import io.reactivex.Observer;
  * author: 王益德
  * Describe:
  */
-public interface IContract {
+public interface IContract{
     interface ILoginModel extends IModel{
         void login(String username,String pwd,Observer<LogAndRegEntity> observer);
     }

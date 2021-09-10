@@ -30,7 +30,7 @@ import com.frame.lib_common.R;
 import java.lang.reflect.Method;
 
 
-public class SlidingMenu extends RelativeLayout {
+public class SlidingMenu extends RelativeLayout{
 
 	private static final String TAG = SlidingMenu.class.getSimpleName();
 

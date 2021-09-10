@@ -20,7 +20,7 @@ import org.greenrobot.eventbus.EventBus;
  * author: 王益德
  * Describe:
  */
-public class RegisterFragment extends BaseFragment<RegisterPresenter> implements IContract.IRegisterView {
+public class RegisterFragment extends BaseFragment<RegisterPresenter> implements IContract.IRegisterView{
 
     private EditText regUsernameEdit;
     private EditText regPasswordEdit;

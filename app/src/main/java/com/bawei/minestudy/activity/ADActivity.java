@@ -7,7 +7,7 @@ import android.view.animation.AlphaAnimation;
 import com.bawei.minestudy.R;
 import com.bawei.mybase.view.BaseActivity;
 
-public class ADActivity extends BaseActivity {
+public class ADActivity extends BaseActivity  {
 
     private Handler handler;
     private android.widget.ImageView adImg;

@@ -20,7 +20,7 @@ import java.util.List;
  * author: 王益德
  * Describe:
  */
-public class VideoAdapter extends BaseMultiItemQuickAdapter<VideoEntity.DataBean, BaseViewHolder> {
+public class VideoAdapter extends BaseMultiItemQuickAdapter<VideoEntity.DataBean, BaseViewHolder>{
 
     public VideoAdapter(@Nullable List<VideoEntity.DataBean> data) {
         super(data);

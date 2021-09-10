@@ -12,7 +12,7 @@ import org.greenrobot.greendao.annotation.Generated;
  * Describe:
  */
 @Entity
-public class UserMoney {
+public class UserMoney{
     @Id(autoincrement = true)
     private Long id;
 

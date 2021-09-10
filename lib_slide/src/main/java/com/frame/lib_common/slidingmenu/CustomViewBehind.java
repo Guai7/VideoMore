@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import com.frame.lib_common.R;
 
 
-public class CustomViewBehind extends ViewGroup {
+public class CustomViewBehind extends ViewGroup{
 
 	private static final String TAG = "CustomViewBehind";
 

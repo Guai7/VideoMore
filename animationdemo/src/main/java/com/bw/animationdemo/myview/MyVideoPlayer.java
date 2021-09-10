@@ -1,12 +1,10 @@
-package com.bw.animationdemo;
+package com.bw.animationdemo.myview;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -14,33 +12,29 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
-import com.bumptech.glide.request.target.ViewTarget;
+import com.bw.animationdemo.R;
 import com.bw.animationdemo.db.DaoSession;
 import com.bw.animationdemo.db.UserMoneyDao;
+import com.bw.animationdemo.entity.GiftEntity;
 import com.bw.animationdemo.entity.UserMoney;
 import com.bw.animationdemo.utils.MoneyManager;
-import com.bw.paydemo.PayMainActivity;
+import com.bw.animationdemo.utils.RecyclerAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
-import com.umeng.socialize.ShareAction;
 
 import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
@@ -67,6 +61,8 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
     private PopupWindow window;
     private List<GiftEntity.DataBean> nowGiftList;
     private RecyclerAdapter recyclerAdapter;
+
+
     private DaoSession daoSession;
     private UserMoney money;
     private View inflate;
@@ -111,7 +107,6 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
                         imageView.setRotation((float) (340 + Math.random() * 20));
                         rota = true;
                     }
-
 
                     ObjectAnimator alpha = ObjectAnimator.ofFloat(imageView, "alpha", 1, 0);
                     ObjectAnimator translationY = ObjectAnimator.ofFloat(imageView, "translationY", event.getY(), -1);
@@ -200,10 +195,7 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
 
                 TextView moneyText = inflate.findViewById(R.id.this_money);
                 moneyText.setText(""+money.getMoney());
-
             }
-
-
         }
     }
 
@@ -274,6 +266,8 @@ public class MyVideoPlayer extends StandardGSYVideoPlayer implements View.OnClic
 
         String gifImg = nowGiftList.get(position).getGifImg();
         Glide.with(getContext()).load(gifImg).into(imgView);
+
+
         
         if (money.getMoney()<nowGiftList.get(position).getPrice()){
             AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());

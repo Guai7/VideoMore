@@ -14,7 +14,7 @@ import com.bw.paydemo.pay.db.DaoSession;
  * author: 王益德
  * Describe:
  */
-public class MoneyManager {
+public class MoneyManager{
     private DaoSession daoSession;
     private static MoneyManager manager;
 

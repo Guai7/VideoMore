@@ -13,7 +13,7 @@ import android.view.WindowManager;
  * author: 王益德
  * Describe:
  */
-public class WindowUtils {
+public class WindowUtils{
 
     /**
      * 设置沉浸式布局

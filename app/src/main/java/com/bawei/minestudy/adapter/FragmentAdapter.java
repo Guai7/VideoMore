@@ -19,7 +19,7 @@ import java.util.List;
  * author: 王益德
  * Describe:
  */
-public class FragmentAdapter extends FragmentPagerAdapter {
+public class FragmentAdapter extends FragmentPagerAdapter{
 
     private List<Fragment> fragments;
     private List<String> titles;

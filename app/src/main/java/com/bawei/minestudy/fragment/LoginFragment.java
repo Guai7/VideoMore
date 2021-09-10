@@ -26,7 +26,7 @@ import org.greenrobot.eventbus.EventBus;
  * author: 王益德
  * Describe:
  */
-public class LoginFragment extends BaseFragment<LoginPresenter> implements View.OnClickListener, IContract.ILoginView {
+public class LoginFragment extends BaseFragment<LoginPresenter> implements View.OnClickListener, IContract.ILoginView{
 
     private EditText loginUsernameEdit;
     private EditText loginPasswordEdit;

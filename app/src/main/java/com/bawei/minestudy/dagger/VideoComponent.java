@@ -18,7 +18,7 @@ import dagger.Provides;
  * Describe:
  */
 @Component(modules = VideoImageModule.class)
-public interface VideoComponent {
+public interface VideoComponent{
 
     void inject(FaFragment faFragment);
 //    void inject(AppCompatActivity activity);

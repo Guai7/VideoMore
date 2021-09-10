@@ -7,7 +7,7 @@ package com.bawei.minestudy.entity;
  * author: 王益德
  * Describe:
  */
-public class LogAndRegEntity {
+public class LogAndRegEntity{
 
     /**
      * code : 0

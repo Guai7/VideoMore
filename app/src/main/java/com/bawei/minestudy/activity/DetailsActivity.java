@@ -26,7 +26,7 @@ import master.flame.danmaku.ui.widget.DanmakuView;
  * author: 王益德
  * Describe:
  */
-public class DetailsActivity extends BaseActivity {
+public class DetailsActivity extends BaseActivity{
 
     private com.bawei.minestudy.myView.MyVideo detailsRetBtn;
     private android.widget.EditText detailsFlyText;

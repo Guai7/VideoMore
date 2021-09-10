@@ -28,7 +28,7 @@ import com.youth.banner.Banner;
 import java.util.List;
 import java.util.Map;
 
-public class PayMainActivity extends AppCompatActivity implements View.OnClickListener {
+public class PayMainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button payMainPayBtn;
 

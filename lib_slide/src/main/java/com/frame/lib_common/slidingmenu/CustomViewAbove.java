@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CustomViewAbove extends ViewGroup {
+public class CustomViewAbove extends ViewGroup{
 
     private static final String TAG = "CustomViewAbove";
     private static final boolean DEBUG = false;

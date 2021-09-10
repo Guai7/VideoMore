@@ -12,7 +12,7 @@ import java.util.List;
  * author: 王益德
  * Describe:
  */
-public class VideoEntity {
+public class VideoEntity{
 
     /**
      * code : 0

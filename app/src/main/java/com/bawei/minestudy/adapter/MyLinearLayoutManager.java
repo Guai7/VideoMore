@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * author: 王益德
  * Describe:
  */
-public class MyLinearLayoutManager extends LinearLayoutManager {
+public class MyLinearLayoutManager extends LinearLayoutManager{
 
     private PagerSnapHelper pagerSnapHelper;
 

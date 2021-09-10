@@ -29,7 +29,7 @@ import java.util.Objects;
  * author: 王益德
  * Describe:
  */
-public class JingFragment extends BaseFragment<VideoPresenter> implements IContract.IVideoView {
+public class JingFragment extends BaseFragment<VideoPresenter> implements IContract.IVideoView{
     private RecyclerView jingRv;
 
     @Override

@@ -1,6 +1,6 @@
 package com.bw.paydemo.pay;
 
-public final class Base64 {
+public final class Base64{
 
 	private static final int BASELENGTH = 128;
 	private static final int LOOKUPLENGTH = 64;

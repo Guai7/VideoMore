@@ -14,7 +14,7 @@ import com.umeng.socialize.PlatformConfig;
  * author: 王益德
  * Describe:
  */
-public class App extends Application {
+public class App extends Application{
 
     public static Context context;
 

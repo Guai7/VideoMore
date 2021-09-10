@@ -1,6 +1,6 @@
 package com.bawei.mybase.model;
 
 public
-interface IModel {
+interface IModel{
     void destroy();
 }

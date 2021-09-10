@@ -14,7 +14,7 @@ import org.greenrobot.greendao.annotation.Id;
 @Entity
 public class UserMoney {
     @Id(autoincrement = true)
-    private Long id;
+    private Long id;;
 
     private Double money;
 

@@ -19,7 +19,7 @@ import java.util.Random;
  * 注意：本 Demo 仅作为展示用途，实际项目中不能将 RSA_PRIVATE 和签名逻辑放在客户端进行！
  */
 
-public class OrderInfoUtil2_0 {
+public class OrderInfoUtil2_0{
 
 	/**
 	 * 构造授权参数列表

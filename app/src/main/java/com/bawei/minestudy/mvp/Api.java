@@ -17,7 +17,7 @@ import retrofit2.http.Query;
  * author: 王益德
  * Describe:
  */
-public interface Api {
+public interface Api{
 
     String BASE_URL_LOGIN = "http://www.fenghongzhang.com:7777";
 

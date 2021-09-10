@@ -11,7 +11,7 @@ import com.bawei.mybase.presenter.IPresenter;
 import javax.inject.Inject;
 
 public abstract
-class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView {
+class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView{
 
     @Inject
     protected P presenter;

@@ -32,7 +32,7 @@ import java.util.List;
  * author: 王益德
  * Describe:
  */
-public class IndexFragment extends BaseFragment implements View.OnClickListener {
+public class IndexFragment extends BaseFragment implements View.OnClickListener{
     private ImageView menuBtn;
     private TextView loginBtn;
     private SlidingTabLayout indexTabs;

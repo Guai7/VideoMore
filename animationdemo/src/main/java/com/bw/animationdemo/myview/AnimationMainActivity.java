@@ -1,4 +1,4 @@
-package com.bw.animationdemo;
+package com.bw.animationdemo.myview;
 
 import android.Manifest;
 import android.content.Intent;
@@ -10,11 +10,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.bw.animationdemo.R;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.editorpage.ShareActivity;
 import com.umeng.socialize.media.UMImage;
 
 import org.greenrobot.eventbus.EventBus;

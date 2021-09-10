@@ -17,7 +17,7 @@ import io.reactivex.schedulers.Schedulers;
  * author: 王益德
  * Describe:
  */
-public class VideoModel extends BaseModel implements IContract.IVideoModel {
+public class VideoModel extends BaseModel implements IContract.IVideoModel{
     @Override
     public void getVideoData(int page,Observer<VideoEntity> observer) {
         HttpUtils.getInstance()

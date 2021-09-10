@@ -22,7 +22,7 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 
-public class H5PayDemoActivity extends Activity {
+public class H5PayDemoActivity extends Activity{
 
 	private WebView mWebView;
 

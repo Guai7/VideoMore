@@ -35,7 +35,7 @@ import java.util.List;
  * author: 王益德
  * Describe:
  */
-public class FaFragment extends BaseFragment<VideoPresenter> implements IContract.IVideoView, OnRefreshListener, OnLoadMoreListener, OnItemClickListener {
+public class FaFragment extends BaseFragment<VideoPresenter> implements IContract.IVideoView, OnRefreshListener, OnLoadMoreListener, OnItemClickListener{
     private RecyclerView faRv;
 
     private int page = 1;

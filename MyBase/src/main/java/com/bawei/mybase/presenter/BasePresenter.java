@@ -5,7 +5,7 @@ import com.bawei.mybase.view.IView;
 
 import javax.inject.Inject;
 
-public class BasePresenter<V extends IView,M extends IModel> implements IPresenter {
+public class BasePresenter<V extends IView,M extends IModel> implements IPresenter{
 
     protected V view;
     protected M model;

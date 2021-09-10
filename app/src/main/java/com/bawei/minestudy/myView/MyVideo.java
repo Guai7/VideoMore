@@ -44,7 +44,7 @@ import moe.codeest.enviews.ENPlayView;
  * Created by shuyu on 2016/11/11.
  */
 
-public class MyVideo extends GSYVideoPlayer {
+public class MyVideo extends GSYVideoPlayer{
 
     //亮度dialog
     protected Dialog mBrightnessDialog;

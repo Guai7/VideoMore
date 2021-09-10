@@ -1,6 +1,6 @@
 package com.bawei.mybase.view;
 
 public
-interface IView {
+interface IView{
     void showToast(String msg);
 }

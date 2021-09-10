@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable;
  * author: 王益德
  * Describe:
  */
-public class RegisterPresenter extends BasePresenter<IContract.IRegisterView, IContract.IRegisterModel> {
+public class RegisterPresenter extends BasePresenter<IContract.IRegisterView, IContract.IRegisterModel>{
 
     private Disposable disposable;
 

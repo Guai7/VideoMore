@@ -10,7 +10,7 @@ import com.bawei.mybase.view.BaseFragment;
  * author: 王益德
  * Describe:
  */
-public class CityFragment extends BaseFragment {
+public class CityFragment extends BaseFragment{
     @Override
     public void initView() {
 

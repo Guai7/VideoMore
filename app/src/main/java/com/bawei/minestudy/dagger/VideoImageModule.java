@@ -17,7 +17,7 @@ import dagger.Provides;
  * Describe:
  */
 @Module
-public class VideoImageModule {
+public class VideoImageModule{
     private IContract.IVideoView view;
 
     public VideoImageModule(IContract.IVideoView view) {

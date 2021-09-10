@@ -4,7 +4,7 @@ import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 
-public class SignUtils {
+public class SignUtils{
 
 	private static final String ALGORITHM = "RSA";
 

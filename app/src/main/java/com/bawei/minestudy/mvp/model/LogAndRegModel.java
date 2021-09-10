@@ -18,7 +18,7 @@ import io.reactivex.schedulers.Schedulers;
  * author: 王益德
  * Describe:
  */
-public class LogAndRegModel extends BaseModel implements IContract.ILoginModel, IContract.IRegisterModel {
+public class LogAndRegModel extends BaseModel implements IContract.ILoginModel, IContract.IRegisterModel{
 
     @Override
     public void login(String username,String pwd,Observer<LogAndRegEntity> observer) {

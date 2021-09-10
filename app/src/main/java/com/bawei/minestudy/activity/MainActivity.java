@@ -2,9 +2,6 @@ package com.bawei.minestudy.activity;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -21,9 +18,9 @@ import com.bawei.minestudy.utils.SpUtils;
 import com.bawei.minestudy.utils.WindowUtils;
 import com.bawei.mybase.view.BaseActivity;
 import com.blankj.utilcode.util.SizeUtils;
-//import com.bw.animationdemo.AnimationMainActivity;
+//import com.bw.animationdemo.myview.AnimationMainActivity;
 //import com.bw.paydemo.PayMainActivity;
-import com.bw.animationdemo.AnimationMainActivity;
+import com.bw.animationdemo.myview.AnimationMainActivity;
 import com.bw.paydemo.PayMainActivity;
 import com.frame.lib_common.slidingmenu.SlidingMenu;
 
@@ -33,8 +30,6 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  * MineStudy

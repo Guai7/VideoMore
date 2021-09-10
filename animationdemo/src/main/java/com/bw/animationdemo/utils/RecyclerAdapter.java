@@ -1,8 +1,10 @@
-package com.bw.animationdemo;
+package com.bw.animationdemo.utils;
 
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bw.animationdemo.R;
+import com.bw.animationdemo.entity.GiftEntity;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
@@ -21,7 +23,7 @@ import java.util.List;
 public class RecyclerAdapter extends BaseMultiItemQuickAdapter<GiftEntity.DataBean, BaseViewHolder> {
     public RecyclerAdapter(@Nullable List<GiftEntity.DataBean> data) {
         super(data);
-        addItemType(0,R.layout.item_gift_view);
+        addItemType(0, R.layout.item_gift_view);
     }
 
     @Override

@@ -18,7 +18,7 @@ import io.reactivex.disposables.Disposable;
  * author: 王益德
  * Describe:
  */
-public class VideoPresenter extends BasePresenter<IContract.IVideoView, IContract.IVideoModel> {
+public class VideoPresenter extends BasePresenter<IContract.IVideoView, IContract.IVideoModel>{
 
     private Disposable disposable;
 

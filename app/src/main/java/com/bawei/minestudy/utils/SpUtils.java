@@ -13,7 +13,7 @@ import com.bawei.minestudy.App;
  *author: 王益德
  *Describe:
  */
-public class SpUtils {
+public class SpUtils{
     private static SpUtils utils;
     private SharedPreferences sp;
 

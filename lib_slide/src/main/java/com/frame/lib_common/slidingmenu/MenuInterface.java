@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-public interface MenuInterface {
+public interface MenuInterface{
 
 	public abstract void scrollBehindTo(int x, int y,
                                         CustomViewBehind cvb, float scrollScale);

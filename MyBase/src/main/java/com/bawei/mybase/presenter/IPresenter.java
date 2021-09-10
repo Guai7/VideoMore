@@ -1,6 +1,6 @@
 package com.bawei.mybase.presenter;
 
 public
-interface IPresenter {
+interface IPresenter{
     void destroy();
 }

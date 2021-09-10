@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable;
  * author: 王益德
  * Describe:
  */
-public class LoginPresenter extends BasePresenter<IContract.ILoginView, IContract.ILoginModel> {
+public class LoginPresenter extends BasePresenter<IContract.ILoginView, IContract.ILoginModel>{
 
     private Disposable disposable;
 

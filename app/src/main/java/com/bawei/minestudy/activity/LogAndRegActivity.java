@@ -27,7 +27,7 @@ import java.util.List;
  * author: 王益德
  * Describe:
  */
-public class LogAndRegActivity extends BaseActivity {
+public class LogAndRegActivity extends BaseActivity{
     private androidx.viewpager.widget.ViewPager loginRegisterVp;
 
     @Override

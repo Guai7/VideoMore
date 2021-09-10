@@ -10,7 +10,7 @@ import com.bawei.mybase.view.BaseFragment;
  * author: 王益德
  * Describe:
  */
-public class MineFragment extends BaseFragment  {
+public class MineFragment extends BaseFragment {
     @Override
     public void initView() {
 

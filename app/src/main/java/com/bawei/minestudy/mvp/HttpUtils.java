@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * author: 王益德
  * Describe:
  */
-public class HttpUtils {
+public class HttpUtils{
     private Retrofit retrofit;
     private static HttpUtils httpUtils;
 
