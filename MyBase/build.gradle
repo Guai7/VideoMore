@@ -39,4 +39,31 @@ dependencies {
     //dagger2依赖
     implementation 'com.google.dagger:dagger:2.23.2'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
+
+    //工具类
+    api 'com.blankj:utilcode:1.30.6'
+
+    //网络框架 okhttp
+    api 'com.squareup.okhttp3:okhttp:3.12.1'
+
+    //日志拦截器
+    api 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    //Gson
+    api 'com.google.code.gson:gson:2.8.0'
+
+    //Glide图片框架
+    api 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    //retrofit2 网络请求封装框架
+    api 'com.squareup.retrofit2:retrofit:2.6.2'
+    //Gson converter 网络请求对象解析器
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //RxJava2 Adapter 线程异常任务调度
+    api "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+
+    //RxJava依赖
+    api 'io.reactivex.rxjava2:rxjava:2.2.6'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
 }

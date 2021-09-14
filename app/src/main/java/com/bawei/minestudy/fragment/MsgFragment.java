@@ -1,7 +1,7 @@
 package com.bawei.minestudy.fragment;
 
 import com.bawei.minestudy.R;
-import com.bawei.mybase.view.BaseFragment;
+import com.bawei.mybase.mvp.view.BaseFragment;
 
 /**
  * MineStudy

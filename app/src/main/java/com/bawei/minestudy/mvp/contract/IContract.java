@@ -2,8 +2,8 @@ package com.bawei.minestudy.mvp.contract;
 
 import com.bawei.minestudy.entity.LogAndRegEntity;
 import com.bawei.minestudy.entity.VideoEntity;
-import com.bawei.mybase.model.IModel;
-import com.bawei.mybase.view.IView;
+import com.bawei.mybase.mvp.model.IModel;
+import com.bawei.mybase.mvp.view.IView;
 
 import java.util.List;
 

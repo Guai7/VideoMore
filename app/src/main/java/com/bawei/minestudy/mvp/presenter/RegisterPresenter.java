@@ -2,7 +2,7 @@ package com.bawei.minestudy.mvp.presenter;
 
 import com.bawei.minestudy.entity.LogAndRegEntity;
 import com.bawei.minestudy.mvp.contract.IContract;
-import com.bawei.mybase.presenter.BasePresenter;
+import com.bawei.mybase.mvp.presenter.BasePresenter;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,4 +1,4 @@
-package com.bawei.mybase.view;
+package com.bawei.mybase.mvp.view;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -6,7 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bawei.mybase.presenter.IPresenter;
+import com.bawei.mybase.mvp.presenter.IPresenter;
 
 import javax.inject.Inject;
 

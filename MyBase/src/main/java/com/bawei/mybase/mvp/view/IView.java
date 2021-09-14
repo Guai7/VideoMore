@@ -1,4 +1,4 @@
-package com.bawei.mybase.view;
+package com.bawei.mybase.mvp.view;
 
 public
 interface IView{

@@ -1,6 +1,5 @@
 package com.bawei.minestudy.activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -11,7 +10,7 @@ import com.bawei.minestudy.adapter.FragmentAdapter;
 import com.bawei.minestudy.fragment.LoginFragment;
 import com.bawei.minestudy.fragment.RegisterFragment;
 import com.bawei.minestudy.utils.WindowUtils;
-import com.bawei.mybase.view.BaseActivity;
+import com.bawei.mybase.mvp.view.BaseActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

@@ -1,7 +1,7 @@
-package com.bawei.mybase.presenter;
+package com.bawei.mybase.mvp.presenter;
 
-import com.bawei.mybase.model.IModel;
-import com.bawei.mybase.view.IView;
+import com.bawei.mybase.mvp.model.IModel;
+import com.bawei.mybase.mvp.view.IView;
 
 import javax.inject.Inject;
 

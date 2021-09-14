@@ -1,6 +1,4 @@
-package com.bawei.mybase.view;
-
-import androidx.annotation.LayoutRes;
+package com.bawei.mybase.mvp.view;
 
 public
 interface IActivity{

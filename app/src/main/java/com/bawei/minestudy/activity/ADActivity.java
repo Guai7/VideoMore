@@ -2,10 +2,9 @@ package com.bawei.minestudy.activity;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.view.animation.AlphaAnimation;
 
 import com.bawei.minestudy.R;
-import com.bawei.mybase.view.BaseActivity;
+import com.bawei.mybase.mvp.view.BaseActivity;
 
 public class ADActivity extends BaseActivity  {
 

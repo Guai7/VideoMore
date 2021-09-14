@@ -64,9 +64,9 @@ dependencies {
     implementation 'com.tencent.tauth:qqopensdk:3.53.0'//QQ官方依赖库，必选
     implementation 'com.squareup.okhttp3:okhttp:3.12.12'//QQ SDK在3.53.0版本及以上时需要集成okhttp官方依赖库，必选
 
-    compile  'com.umeng.umsdk:common:9.4.2'//必选
-    compile  'com.umeng.umsdk:asms:1.4.1'//必选
-    compile 'com.umeng.umsdk:link:1.1.0'//集成U-Link，可选，如要统计分享回流次数和分享新增用户指标则必选
+    implementation  'com.umeng.umsdk:common:9.4.2'//必选
+    implementation  'com.umeng.umsdk:asms:1.4.1'//必选
+    implementation 'com.umeng.umsdk:link:1.1.0'//集成U-Link，可选，如要统计分享回流次数和分享新增用户指标则必选
 
     // 友盟统计SDK
     implementation  'com.umeng.umsdk:common:9.4.2'// 必选
@@ -114,7 +114,7 @@ dependencies {
     implementation 'com.scwang.smart:refresh-header-classics:2.0.3'
 
     //毛玻璃效果实现
-    compile 'jp.wasabeef:blurry:3.0.0'
+    implementation 'jp.wasabeef:blurry:3.0.0'
 
     //导航栏框架
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'

@@ -1,4 +1,4 @@
-package com.bawei.mybase.presenter;
+package com.bawei.mybase.mvp.presenter;
 
 public
 interface IPresenter{

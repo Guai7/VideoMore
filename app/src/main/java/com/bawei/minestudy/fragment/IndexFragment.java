@@ -2,7 +2,6 @@ package com.bawei.minestudy.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,8 +15,7 @@ import com.bawei.minestudy.adapter.FragmentAdapter;
 import com.bawei.minestudy.fragment.indexFragment.FaFragment;
 import com.bawei.minestudy.fragment.indexFragment.GuanFragment;
 import com.bawei.minestudy.fragment.indexFragment.JingFragment;
-import com.bawei.minestudy.utils.SpUtils;
-import com.bawei.mybase.view.BaseFragment;
+import com.bawei.mybase.mvp.view.BaseFragment;
 import com.flyco.tablayout.SlidingTabLayout;
 
 import org.greenrobot.eventbus.EventBus;

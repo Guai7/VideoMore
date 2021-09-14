@@ -15,7 +15,7 @@ import com.bawei.minestudy.mvp.contract.IContract;
 import com.bawei.minestudy.mvp.model.LogAndRegModel;
 import com.bawei.minestudy.mvp.presenter.LoginPresenter;
 import com.bawei.minestudy.utils.SpUtils;
-import com.bawei.mybase.view.BaseFragment;
+import com.bawei.mybase.mvp.view.BaseFragment;
 
 import org.greenrobot.eventbus.EventBus;
 

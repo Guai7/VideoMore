@@ -1,9 +1,6 @@
 package com.bawei.minestudy.fragment.indexFragment;
 
-import android.view.View;
-
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bawei.minestudy.R;
@@ -14,8 +11,7 @@ import com.bawei.minestudy.mvp.contract.IContract;
 import com.bawei.minestudy.mvp.model.VideoModel;
 import com.bawei.minestudy.mvp.presenter.VideoPresenter;
 import com.bawei.minestudy.myView.MyVideo;
-import com.bawei.mybase.view.BaseFragment;
-import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
+import com.bawei.mybase.mvp.view.BaseFragment;
 
 import org.jetbrains.annotations.NotNull;
 

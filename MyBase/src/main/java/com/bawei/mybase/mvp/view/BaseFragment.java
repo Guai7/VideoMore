@@ -1,4 +1,4 @@
-package com.bawei.mybase.view;
+package com.bawei.mybase.mvp.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.bawei.mybase.presenter.IPresenter;
+import com.bawei.mybase.mvp.presenter.IPresenter;
 
 import javax.inject.Inject;
 

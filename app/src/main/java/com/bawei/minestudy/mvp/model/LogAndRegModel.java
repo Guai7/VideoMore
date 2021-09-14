@@ -3,9 +3,8 @@ package com.bawei.minestudy.mvp.model;
 import com.bawei.minestudy.entity.LogAndRegEntity;
 import com.bawei.minestudy.mvp.Api;
 import com.bawei.minestudy.mvp.HttpLoginUtils;
-import com.bawei.minestudy.mvp.HttpUtils;
 import com.bawei.minestudy.mvp.contract.IContract;
-import com.bawei.mybase.model.BaseModel;
+import com.bawei.mybase.mvp.model.BaseModel;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

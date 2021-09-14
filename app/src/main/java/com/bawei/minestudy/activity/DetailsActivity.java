@@ -6,9 +6,7 @@ import android.view.View;
 
 import com.bawei.minestudy.R;
 import com.bawei.minestudy.entity.VideoEntity;
-import com.bawei.mybase.view.BaseActivity;
-
-import java.io.Serializable;
+import com.bawei.mybase.mvp.view.BaseActivity;
 
 import master.flame.danmaku.controller.DrawHandler;
 import master.flame.danmaku.danmaku.model.BaseDanmaku;

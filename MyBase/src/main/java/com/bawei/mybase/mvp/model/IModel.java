@@ -1,4 +1,4 @@
-package com.bawei.mybase.model;
+package com.bawei.mybase.mvp.model;
 
 public
 interface IModel{
